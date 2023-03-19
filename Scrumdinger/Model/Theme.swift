@@ -32,6 +32,41 @@ enum Theme: String {
         }
     }
     var mainColor: Color {
-        Color(rawValue)
+//        Color(rawValue)
+        switch self {
+        case .bubblegum:
+                return Color("Bubblegum")
+            case .buttercup:
+                return Color("Buttercup")
+            case .indigo:
+                return Color("Indigo")
+            case .lavender:
+                return Color("Lavender")
+            case .magenta:
+                return Color("Magenta")
+            case .navy:
+                return Color("Navy")
+            case .orange:
+            return .orange
+            case .oxblood:
+                return Color("Oxblood")
+            case .periwinkle:
+                return Color("Periwinkle")
+            case .poppy:
+                return Color("Poppy")
+            case .purple:
+                return Color("Purple")
+            case .seafoam:
+                return Color("Seafoam")
+            case .sky:
+                return Color("Sky")
+            case .tan:
+                return Color("Tan")
+            case .teal:
+                return Color("Teal")
+            case .yellow:
+            return .yellow
+            }
+        }
     }
-}
+
