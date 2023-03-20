@@ -11,6 +11,8 @@ struct DetailView: View {
     //MARK: - Properties
     let scrum: DailyScrum
     
+    @State private var isPresentingEditView = false
+    
     //MARK: - Body
     var body: some View {
         List {
@@ -51,6 +53,29 @@ struct DetailView: View {
             }//:SECTION
         }//:LIST
         .navigationTitle(scrum.title)
+        .toolbar{
+            Button("Edit") {
+                isPresentingEditView = true
+            }
+        }
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView {
+                DetailEditView()
+                    .navigationTitle(scrum.title)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingEditView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
+                                isPresentingEditView = false
+                            }
+                        }
+                    }
+            }
+        }
     }
 }
 
