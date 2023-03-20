@@ -17,6 +17,7 @@
 		85D2031F29C0D980008758E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D2031E29C0D980008758E8 /* Assets.xcassets */; };
 		85D2032229C0D980008758E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D2032129C0D980008758E8 /* Preview Assets.xcassets */; };
 		85E0DBEC29C7C6DA00325B60 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0DBEB29C7C6DA00325B60 /* ExtensionColor.swift */; };
+		85E0DBEE29C7DB1100325B60 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E0DBED29C7DB1100325B60 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		85D2031E29C0D980008758E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85D2032129C0D980008758E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85E0DBEB29C7C6DA00325B60 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
+		85E0DBED29C7DB1100325B60 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				85D2031C29C0D97F008758E8 /* MettingView.swift */,
 				8527A23029C334F100BF57E2 /* CardView.swift */,
 				8536A6D929C52DD5001E4488 /* ScrumsView.swift */,
+				85E0DBED29C7DB1100325B60 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8527A22F29C32BD100BF57E2 /* DailyScrum.swift in Sources */,
+				85E0DBEE29C7DB1100325B60 /* DetailView.swift in Sources */,
 				8527A23329C336B300BF57E2 /* TrailingIconLabelStyle.swift in Sources */,
 				8527A22D29C3297200BF57E2 /* Theme.swift in Sources */,
 				85E0DBEC29C7C6DA00325B60 /* ExtensionColor.swift in Sources */,
