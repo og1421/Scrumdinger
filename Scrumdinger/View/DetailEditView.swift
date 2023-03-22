@@ -9,8 +9,8 @@ import SwiftUI
 
 struct DetailEditView: View {
     //MARK: - Properties
-    @State private var data = DailyScrum.Data()
     @State private var newAttendeeName = ""
+    @Binding var data: DailyScrum.Data
     
     
     //MARK: - Body
@@ -29,6 +29,7 @@ struct DetailEditView: View {
                     Text("\(Int(data.lengthInMinutes)) minutes")
                         .accessibilityHidden(true)
                 }//:HSTACK
+                ThemePickerView(selection: $data.theme)
             }//:Section
             
             Section(header: Text("Attendees")) {
@@ -61,6 +62,6 @@ struct DetailEditView: View {
 //MARK: - Preview
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
     }
 }
