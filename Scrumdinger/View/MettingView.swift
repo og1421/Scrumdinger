@@ -8,28 +8,16 @@
 import SwiftUI
 
 struct MettingView: View {
+    //MARK: - Properties
+    @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer = ScrumTimer()
+    
+    //MARK: - Body
     var body: some View {
         ZStack {
+            RoundedRectangle(cornerRadius: 16.0)
             VStack {
-                ProgressView(value: 5, total: 15)
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Seconds Enlapsed")
-                            .font(.caption)
-                        Label("300", systemImage: "hourglass.bottomhalf.fill")
-                    }//:Vstack
-
-                    Spacer()
-
-                    VStack(alignment: .trailing) {
-                        Text("Seconds Remaining")
-                            .font(.caption)
-                        Label("600", systemImage: "hourglass.tophalf.fill")
-                    }//:Vstack
-                }//:HStack
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("Time remaining")
-                .accessibilityLabel("10 minutes")
+                MeetingHeaderVIew(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scum.theme)
                 
                 Circle()
                     .strokeBorder(lineWidth: 24)
@@ -48,12 +36,15 @@ struct MettingView: View {
                 }//:HSTACK
             }//:Vstack
             .padding()
-        }
+        }//:ZSTACK
+        .foregroundColor(scrum.theme.accentColor)
+        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
 struct MettingView_Previews: PreviewProvider {
     static var previews: some View {
-        MettingView()
+        MettingView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }
