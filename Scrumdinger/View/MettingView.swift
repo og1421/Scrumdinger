@@ -6,38 +6,42 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MettingView: View {
     //MARK: - Properties
     @Binding var scrum: DailyScrum
     @StateObject var scrumTimer = ScrumTimer()
     
+    private var player: AVPlayer { AVPlayer.sharedDingPlayer }
+    
     //MARK: - Body
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16.0)
+                .fill(scrum.theme.mainColor)
             VStack {
-                MeetingHeaderVIew(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scum.theme)
+                MeetingHeaderVIew(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
                 
                 Circle()
                     .strokeBorder(lineWidth: 24)
                 
-                HStack {
-                    Text("Speaker 1 of 3")
-                    
-                    Spacer()
-                    
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "forward.fill")
-                    }
-                    .accessibilityLabel("Next speaker")
-                }//:HSTACK
+                MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }//:Vstack
-            .padding()
         }//:ZSTACK
+        .padding()
         .foregroundColor(scrum.theme.accentColor)
+        .onAppear{
+            scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
+            scrumTimer.startScrum()
+        }
+        .onDisappear{
+            scrumTimer.stopScrum()
+        }
         .navigationBarTitleDisplayMode(.inline)
         
     }
