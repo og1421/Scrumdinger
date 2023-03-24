@@ -9,44 +9,46 @@ import SwiftUI
 
 struct MettingView: View {
     var body: some View {
-        VStack {
-            ProgressView(value: 5, total: 15)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Seconds Enlapsed")
-                        .font(.caption)
-                    Label("300", systemImage: "hourglass.bottomhalf.fill")
-                }//:Vstack
+        ZStack {
+            VStack {
+                ProgressView(value: 5, total: 15)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Seconds Enlapsed")
+                            .font(.caption)
+                        Label("300", systemImage: "hourglass.bottomhalf.fill")
+                    }//:Vstack
 
-                Spacer()
+                    Spacer()
 
-                VStack(alignment: .trailing) {
-                    Text("Seconds Remaining")
-                        .font(.caption)
-                    Label("600", systemImage: "hourglass.tophalf.fill")
-                }//:Vstack
-            }//:HStack
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time remaining")
-            .accessibilityLabel("10 minutes")
-            
-            Circle()
-                .strokeBorder(lineWidth: 24)
-            
-            HStack {
-                Text("Speaker 1 of 3")
+                    VStack(alignment: .trailing) {
+                        Text("Seconds Remaining")
+                            .font(.caption)
+                        Label("600", systemImage: "hourglass.tophalf.fill")
+                    }//:Vstack
+                }//:HStack
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("Time remaining")
+                .accessibilityLabel("10 minutes")
                 
-                Spacer()
+                Circle()
+                    .strokeBorder(lineWidth: 24)
                 
-                Button {
+                HStack {
+                    Text("Speaker 1 of 3")
                     
-                } label: {
-                    Image(systemName: "forward.fill")
-                }
-                .accessibilityLabel("Next speaker")
-            }//:HSTACK
-        }//:Vstack
-        .padding()
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "forward.fill")
+                    }
+                    .accessibilityLabel("Next speaker")
+                }//:HSTACK
+            }//:Vstack
+            .padding()
+        }
     }
 }
 
