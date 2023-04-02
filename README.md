@@ -21,3 +21,8 @@ height="560" width="280">
 <img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Scrum%20View.png"
 height="450" width="225"> | <img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Edit%20Scrum%20Meeting.png"
 height="450" width="225"> 
+
+#### Meeting View
+
+<img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Scrum%20timer.png"
+height="560" width="280"> 
