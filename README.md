@@ -10,3 +10,14 @@ This app was created during the Apple Developer program using SwiftUI, which cre
 
 <img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Landing%20Page.png"
 height="560" width="280">
+
+#### Creating a new meeting
+
+<img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Creating%20a%20new%20meeting.png"
+height="560" width="280">
+
+#### Scrum View
+
+<img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Scrum%20View.png"
+height="360" width="180"> | <img src="https://github.com/og1421/Scrumdinger/blob/main/Scrumdinger/Images/Edit%20Scrum%20Meeting.png"
+height="360" width="180"> 
